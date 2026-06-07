@@ -30,7 +30,7 @@ Data:
 Format: [{{"insight": "...", "type": "trend/anomaly/pattern"}}]"""
     
     response = client.chat.completions.create(
-        model="meta-llama/llama-3-8b-instruct:free",
+        model="meta-llama/llama-3.3-70b-instruct",
         messages=[{"role": "user", "content": prompt}]
     )
     insights_text = response.choices[0].message.content.strip().replace("`json", "").replace("```", "")
@@ -53,7 +53,7 @@ Data: {csv_data}
 Question: {question}"""
     
     response = client.chat.completions.create(
-        model="meta-llama/llama-3-8b-instruct:free",
+        model="meta-llama/llama-3.3-70b-instruct",
         messages=[{"role": "user", "content": prompt}]
     )
     return jsonify({"answer": response.choices[0].message.content})
