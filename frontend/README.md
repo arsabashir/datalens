@@ -1,16 +1,35 @@
-# React + Vite
+# 🔍 DataLens — AI Data Intelligence
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Transform raw, messy data into instant insights. No coding required.
 
-Currently, two official plugins are available:
+Built for Microsoft Build AI Hackathon 2026 | Theme: AI Meets Data: From Noise to Insight
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Demo
+[https://datalens-six.vercel.app](https://datalens-six.vercel.app)
 
-## React Compiler
+## 🎥 Demo Video
+[https://youtu.be/AmG0YQfxMEY](https://youtu.be/AmG0YQfxMEY)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 What is DataLens?
+DataLens is an AI-powered data analysis web app that takes raw, messy CSV files and turns them into actionable insights instantly.
 
-## Expanding the ESLint configuration
+## ✨ Features
+- Auto Data Cleaning — removes duplicates, fixes missing values
+- AI Insights — 6 categorized insights (trends, anomalies, patterns)
+- Visual Charts — automatic data visualization
+- Natural Language Chat — ask anything about your data in plain English
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- Frontend: React.js, Vite, Recharts
+- Backend: Python, Flask, Pandas
+- AI: LLaMA 3.3 70B via OpenRouter API
+- Deployment: Vercel (frontend), Render (backend)
+
+## ⚙️ Setup Instructions
+
+### Backend
+`bash
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt

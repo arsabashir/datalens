@@ -17,7 +17,7 @@ export default function App() {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const res = await axios.post("http://localhost:5000/api/analyze", formData);
+      const res = await axios.post("https://datalens-fbf7.onrender.com/api/analyze", formData);
       setData(res.data);
       setInsights(JSON.parse(res.data.insights));
     } catch (err) {
@@ -31,7 +31,7 @@ export default function App() {
     setChatLoading(true);
     const csvData = JSON.stringify(data.rows.slice(0, 5));
     try {
-      const res = await axios.post("http://localhost:5000/api/chat", {
+      const res = await axios.post("https://datalens-fbf7.onrender.com/api/chat", {
         question,
         csvData,
       });
