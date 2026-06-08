@@ -18,12 +18,12 @@ client = OpenAI(
 @app.route("/api/analyze", methods=["POST"])
 def analyze():
     file = request.files["file"]
-    df = pd.read_csv(file)
+    df = pd.read_csv(file, nrows=500)
     
     df = df.drop_duplicates()
     df = df.fillna("N/A")
     
-    csv_preview = df.head(10).to_string()
+    csv_preview = df.head(5).to_string()
     prompt = f"""Give exactly 6 insights about this data as JSON array only.
 Data:
 {csv_preview}
