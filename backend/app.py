@@ -9,6 +9,14 @@ load_dotenv(r"C:\Users\ARSA\datalens\backend\.env")
 
 app = Flask(__name__)
 CORS(app)
+import os
+import psutil
+
+@app.route('/memory')
+def memory():
+    process = psutil.Process(os.getpid())
+    mem = process.memory_info().rss / 1024 / 1024
+    return f"Memory usage: {mem:.2f} MB"
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
