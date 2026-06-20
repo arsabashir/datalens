@@ -19,6 +19,12 @@ client = OpenAI(
 @app.route("/api/analyze", methods=["POST"])
 def analyze():
     file = request.files["file"]
+    file.seek(0, 2)
+    size = file.tell()
+    file.seek(0)
+
+    if size > 1_000_000:
+     return jsonify({"error": "File too large. Please upload a CSV under 1MB."}), 400
     df = pd.read_csv(file, nrows=500)
     
     df = df.drop_duplicates()
